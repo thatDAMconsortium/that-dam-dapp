@@ -3,26 +3,41 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      balance: 0,
+    };
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
+          
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+
         </header>
+        <body>
+          
+          <p>Search address balances:</p>
+          <div className="searchBar">
+            <input type="text" id="name" name="name" size="75"/>
+            <button onClick={() => this.handleClick()}>search balance</button>
+          </div>
+
+          <p>Balance: {this.state.balance}</p>
+
+        </body>
       </div>
     );
   }
+
+  handleClick() {
+    this.setState({balance: 'dope'})
+  }
 }
+
+
 
 export default App;
